@@ -95,7 +95,7 @@ struct DashboardView: View {
                 
                 arNavigationLink
                 
-                recentActivitySection
+            
             }
             .padding()
         }
@@ -166,29 +166,7 @@ struct DashboardView: View {
         .padding(.horizontal)
     }
     
-    private var recentActivitySection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Recent Activity")
-                .font(.headline)
-            
-            ForEach(1...3, id: \.self) { _ in
-                HStack {
-                    Circle()
-                        .fill(Color.blue)
-                        .frame(width: 10, height: 10)
-                    Text("Viewed item in AR")
-                    Spacer()
-                    Text("2h ago")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-            }
-        }
-        .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(10)
-        .padding(.horizontal)
-    }
+    
 }
 
 struct ARViewContainer: UIViewControllerRepresentable {
