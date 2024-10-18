@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E701837E2CC10B5400B29DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701837D2CC10B5400B29DBB /* AppDelegate.swift */; };
+		E70183802CC10B5400B29DBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701837F2CC10B5400B29DBB /* ContentView.swift */; };
+		E70183822CC10B5500B29DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E70183812CC10B5500B29DBB /* Assets.xcassets */; };
+		E70183852CC10B5500B29DBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E70183842CC10B5500B29DBB /* Preview Assets.xcassets */; };
+		E701838F2CC10B5500B29DBB /* Immersive_commerceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701838E2CC10B5500B29DBB /* Immersive_commerceTests.swift */; };
+		E70183992CC10B5500B29DBB /* Immersive_commerceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183982CC10B5500B29DBB /* Immersive_commerceUITests.swift */; };
+		E701839B2CC10B5500B29DBB /* Immersive_commerceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701839A2CC10B5500B29DBB /* Immersive_commerceUITestsLaunchTests.swift */; };
+		E70183A82CC1134300B29DBB /* newbalance.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183A72CC1134300B29DBB /* newbalance.usdz */; };
+		E70183AA2CC114AA00B29DBB /* used_new.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183A92CC114AA00B29DBB /* used_new.usdz */; };
+		E70183B02CC11BF000B29DBB /* fila.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183AC2CC11BF000B29DBB /* fila.usdz */; };
+		E70183B12CC11BF000B29DBB /* gucci.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183AD2CC11BF000B29DBB /* gucci.usdz */; };
+		E70183B22CC11BF000B29DBB /* dior.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183AE2CC11BF000B29DBB /* dior.usdz */; };
+		E70183B52CC13C7100B29DBB /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183B32CC13C7100B29DBB /* home.swift */; };
+		E70183B62CC13C7100B29DBB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183B42CC13C7100B29DBB /* SplashScreen.swift */; };
+		E70183BA2CC1566E00B29DBB /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183B92CC1566E00B29DBB /* Basket.swift */; };
+		E70183BD2CC195A300B29DBB /* goose.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183BB2CC195A300B29DBB /* goose.usdz */; };
+		E70183C02CC1979400B29DBB /* nike.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183BF2CC1979400B29DBB /* nike.usdz */; };
+		E76FEAC72CC23C4400F9B234 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E701838B2CC10B5500B29DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E70183722CC10B5400B29DBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E70183792CC10B5400B29DBB;
+			remoteInfo = "Immersive commerce";
+		};
+		E70183952CC10B5500B29DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E70183722CC10B5400B29DBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E70183792CC10B5400B29DBB;
+			remoteInfo = "Immersive commerce";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E701837A2CC10B5400B29DBB /* Immersive commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Immersive commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E701837D2CC10B5400B29DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E701837F2CC10B5400B29DBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E70183812CC10B5500B29DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E70183842CC10B5500B29DBB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E701838A2CC10B5500B29DBB /* Immersive commerceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Immersive commerceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E701838E2CC10B5500B29DBB /* Immersive_commerceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Immersive_commerceTests.swift; sourceTree = "<group>"; };
+		E70183942CC10B5500B29DBB /* Immersive commerceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Immersive commerceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70183982CC10B5500B29DBB /* Immersive_commerceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Immersive_commerceUITests.swift; sourceTree = "<group>"; };
+		E701839A2CC10B5500B29DBB /* Immersive_commerceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Immersive_commerceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E70183A72CC1134300B29DBB /* newbalance.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = newbalance.usdz; sourceTree = "<group>"; };
+		E70183A92CC114AA00B29DBB /* used_new.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = used_new.usdz; sourceTree = "<group>"; };
+		E70183AC2CC11BF000B29DBB /* fila.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fila.usdz; sourceTree = "<group>"; };
+		E70183AD2CC11BF000B29DBB /* gucci.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = gucci.usdz; sourceTree = "<group>"; };
+		E70183AE2CC11BF000B29DBB /* dior.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dior.usdz; sourceTree = "<group>"; };
+		E70183B32CC13C7100B29DBB /* home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
+		E70183B42CC13C7100B29DBB /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		E70183B92CC1566E00B29DBB /* Basket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		E70183BB2CC195A300B29DBB /* goose.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = goose.usdz; sourceTree = "<group>"; };
+		E70183BF2CC1979400B29DBB /* nike.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = nike.usdz; path = "../../../../../Library/Containers/com.apple.RealityConverter/Data/tmp/com.apple.RealityConverter/B9D7171A-40E6-45E0-ABD8-003730A78EB6/nike.usdz"; sourceTree = "<group>"; };
+		E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E70183772CC10B5400B29DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E70183872CC10B5500B29DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E70183912CC10B5500B29DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E70183712CC10B5400B29DBB = {
+			isa = PBXGroup;
+			children = (
+				E701837C2CC10B5400B29DBB /* Immersive commerce */,
+				E701838D2CC10B5500B29DBB /* Immersive commerceTests */,
+				E70183972CC10B5500B29DBB /* Immersive commerceUITests */,
+				E701837B2CC10B5400B29DBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E701837B2CC10B5400B29DBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E701837A2CC10B5400B29DBB /* Immersive commerce.app */,
+				E701838A2CC10B5500B29DBB /* Immersive commerceTests.xctest */,
+				E70183942CC10B5500B29DBB /* Immersive commerceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E701837C2CC10B5400B29DBB /* Immersive commerce */ = {
+			isa = PBXGroup;
+			children = (
+				E70183A72CC1134300B29DBB /* newbalance.usdz */,
+				E70183A92CC114AA00B29DBB /* used_new.usdz */,
+				E701837D2CC10B5400B29DBB /* AppDelegate.swift */,
+				E70183AE2CC11BF000B29DBB /* dior.usdz */,
+				E70183AC2CC11BF000B29DBB /* fila.usdz */,
+				E70183AD2CC11BF000B29DBB /* gucci.usdz */,
+				E70183BF2CC1979400B29DBB /* nike.usdz */,
+				E701837F2CC10B5400B29DBB /* ContentView.swift */,
+				E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */,
+				E70183BB2CC195A300B29DBB /* goose.usdz */,
+				E70183B92CC1566E00B29DBB /* Basket.swift */,
+				E70183B32CC13C7100B29DBB /* home.swift */,
+				E70183B42CC13C7100B29DBB /* SplashScreen.swift */,
+				E70183812CC10B5500B29DBB /* Assets.xcassets */,
+				E70183832CC10B5500B29DBB /* Preview Content */,
+			);
+			path = "Immersive commerce";
+			sourceTree = "<group>";
+		};
+		E70183832CC10B5500B29DBB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E70183842CC10B5500B29DBB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E701838D2CC10B5500B29DBB /* Immersive commerceTests */ = {
+			isa = PBXGroup;
+			children = (
+				E701838E2CC10B5500B29DBB /* Immersive_commerceTests.swift */,
+			);
+			path = "Immersive commerceTests";
+			sourceTree = "<group>";
+		};
+		E70183972CC10B5500B29DBB /* Immersive commerceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E70183982CC10B5500B29DBB /* Immersive_commerceUITests.swift */,
+				E701839A2CC10B5500B29DBB /* Immersive_commerceUITestsLaunchTests.swift */,
+			);
+			path = "Immersive commerceUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E70183792CC10B5400B29DBB /* Immersive commerce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E701839E2CC10B5500B29DBB /* Build configuration list for PBXNativeTarget "Immersive commerce" */;
+			buildPhases = (
+				E70183762CC10B5400B29DBB /* Sources */,
+				E70183772CC10B5400B29DBB /* Frameworks */,
+				E70183782CC10B5400B29DBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Immersive commerce";
+			productName = "Immersive commerce";
+			productReference = E701837A2CC10B5400B29DBB /* Immersive commerce.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E70183892CC10B5500B29DBB /* Immersive commerceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E70183A12CC10B5500B29DBB /* Build configuration list for PBXNativeTarget "Immersive commerceTests" */;
+			buildPhases = (
+				E70183862CC10B5500B29DBB /* Sources */,
+				E70183872CC10B5500B29DBB /* Frameworks */,
+				E70183882CC10B5500B29DBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E701838C2CC10B5500B29DBB /* PBXTargetDependency */,
+			);
+			name = "Immersive commerceTests";
+			productName = "Immersive commerceTests";
+			productReference = E701838A2CC10B5500B29DBB /* Immersive commerceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E70183932CC10B5500B29DBB /* Immersive commerceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E70183A42CC10B5500B29DBB /* Build configuration list for PBXNativeTarget "Immersive commerceUITests" */;
+			buildPhases = (
+				E70183902CC10B5500B29DBB /* Sources */,
+				E70183912CC10B5500B29DBB /* Frameworks */,
+				E70183922CC10B5500B29DBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E70183962CC10B5500B29DBB /* PBXTargetDependency */,
+			);
+			name = "Immersive commerceUITests";
+			productName = "Immersive commerceUITests";
+			productReference = E70183942CC10B5500B29DBB /* Immersive commerceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E70183722CC10B5400B29DBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					E70183792CC10B5400B29DBB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					E70183892CC10B5500B29DBB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = E70183792CC10B5400B29DBB;
+					};
+					E70183932CC10B5500B29DBB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = E70183792CC10B5400B29DBB;
+					};
+				};
+			};
+			buildConfigurationList = E70183752CC10B5400B29DBB /* Build configuration list for PBXProject "Immersive commerce" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E70183712CC10B5400B29DBB;
+			productRefGroup = E701837B2CC10B5400B29DBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E70183792CC10B5400B29DBB /* Immersive commerce */,
+				E70183892CC10B5500B29DBB /* Immersive commerceTests */,
+				E70183932CC10B5500B29DBB /* Immersive commerceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E70183782CC10B5400B29DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E70183C02CC1979400B29DBB /* nike.usdz in Resources */,
+				E70183852CC10B5500B29DBB /* Preview Assets.xcassets in Resources */,
+				E70183A82CC1134300B29DBB /* newbalance.usdz in Resources */,
+				E70183822CC10B5500B29DBB /* Assets.xcassets in Resources */,
+				E70183BD2CC195A300B29DBB /* goose.usdz in Resources */,
+				E70183B22CC11BF000B29DBB /* dior.usdz in Resources */,
+				E70183B02CC11BF000B29DBB /* fila.usdz in Resources */,
+				E70183B12CC11BF000B29DBB /* gucci.usdz in Resources */,
+				E70183AA2CC114AA00B29DBB /* used_new.usdz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E70183882CC10B5500B29DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E70183922CC10B5500B29DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E70183762CC10B5400B29DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E70183B62CC13C7100B29DBB /* SplashScreen.swift in Sources */,
+				E70183B52CC13C7100B29DBB /* home.swift in Sources */,
+				E70183BA2CC1566E00B29DBB /* Basket.swift in Sources */,
+				E70183802CC10B5400B29DBB /* ContentView.swift in Sources */,
+				E701837E2CC10B5400B29DBB /* AppDelegate.swift in Sources */,
+				E76FEAC72CC23C4400F9B234 /* ProductDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E70183862CC10B5500B29DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E701838F2CC10B5500B29DBB /* Immersive_commerceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E70183902CC10B5500B29DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E70183992CC10B5500B29DBB /* Immersive_commerceUITests.swift in Sources */,
+				E701839B2CC10B5500B29DBB /* Immersive_commerceUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E701838C2CC10B5500B29DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E70183792CC10B5400B29DBB /* Immersive commerce */;
+			targetProxy = E701838B2CC10B5500B29DBB /* PBXContainerItemProxy */;
+		};
+		E70183962CC10B5500B29DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E70183792CC10B5400B29DBB /* Immersive commerce */;
+			targetProxy = E70183952CC10B5500B29DBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E701839C2CC10B5500B29DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E701839D2CC10B5500B29DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E701839F2CC10B5500B29DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Immersive commerce/Preview Content\"";
+				DEVELOPMENT_TEAM = 936939DZC3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Creative-Technology-Collective.Immersive-commerce";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E70183A02CC10B5500B29DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Immersive commerce/Preview Content\"";
+				DEVELOPMENT_TEAM = 936939DZC3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Creative-Technology-Collective.Immersive-commerce";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E70183A22CC10B5500B29DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 936939DZC3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Creative-Technology-Collective.Immersive-commerceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Immersive commerce.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Immersive commerce";
+			};
+			name = Debug;
+		};
+		E70183A32CC10B5500B29DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 936939DZC3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Creative-Technology-Collective.Immersive-commerceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Immersive commerce.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Immersive commerce";
+			};
+			name = Release;
+		};
+		E70183A52CC10B5500B29DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 936939DZC3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Creative-Technology-Collective.Immersive-commerceUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Immersive commerce";
+			};
+			name = Debug;
+		};
+		E70183A62CC10B5500B29DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 936939DZC3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Creative-Technology-Collective.Immersive-commerceUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Immersive commerce";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E70183752CC10B5400B29DBB /* Build configuration list for PBXProject "Immersive commerce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E701839C2CC10B5500B29DBB /* Debug */,
+				E701839D2CC10B5500B29DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E701839E2CC10B5500B29DBB /* Build configuration list for PBXNativeTarget "Immersive commerce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E701839F2CC10B5500B29DBB /* Debug */,
+				E70183A02CC10B5500B29DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E70183A12CC10B5500B29DBB /* Build configuration list for PBXNativeTarget "Immersive commerceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E70183A22CC10B5500B29DBB /* Debug */,
+				E70183A32CC10B5500B29DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E70183A42CC10B5500B29DBB /* Build configuration list for PBXNativeTarget "Immersive commerceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E70183A52CC10B5500B29DBB /* Debug */,
+				E70183A62CC10B5500B29DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E70183722CC10B5400B29DBB /* Project object */;
+}

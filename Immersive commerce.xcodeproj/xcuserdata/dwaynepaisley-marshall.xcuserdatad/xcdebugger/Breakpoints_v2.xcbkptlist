@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D4A6A919-BDB6-4129-A1B5-2918802500F0"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A47ED36-1200-40B9-BB58-A11A8A8F29C0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Immersive commerce/VirtualTryOnView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103">
+            <Locations>
+               <Location
+                  uuid = "9A47ED36-1200-40B9-BB58-A11A8A8F29C0 - 8ab83dd8431cf04d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Immersive_commerce.VirtualTryOnARViewContainer.Coordinator.placeShoe(at: __C.ARRaycastResult, in: RealityKit.ARView) -&gt; ()"
+                  moduleName = "Immersive commerce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dwaynepaisley-marshall/doc/PLAYGROUND/IC-APP/Immersive%20commerce/Immersive%20commerce/VirtualTryOnView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103">
+               </Location>
+               <Location
+                  uuid = "9A47ED36-1200-40B9-BB58-A11A8A8F29C0 - ee6443b53a12f1d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor @Sendable () -&gt; () in closure #1 @Sendable () async -&gt; () in Immersive_commerce.VirtualTryOnARViewContainer.Coordinator.placeShoe(at: __C.ARRaycastResult, in: RealityKit.ARView) -&gt; ()"
+                  moduleName = "Immersive commerce"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dwaynepaisley-marshall/doc/PLAYGROUND/IC-APP/Immersive%20commerce/Immersive%20commerce/VirtualTryOnView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
