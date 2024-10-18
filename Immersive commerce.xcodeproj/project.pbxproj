@@ -23,7 +23,6 @@
 		E70183B62CC13C7100B29DBB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183B42CC13C7100B29DBB /* SplashScreen.swift */; };
 		E70183BA2CC1566E00B29DBB /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183B92CC1566E00B29DBB /* Basket.swift */; };
 		E70183BD2CC195A300B29DBB /* goose.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183BB2CC195A300B29DBB /* goose.usdz */; };
-		E70183C02CC1979400B29DBB /* nike.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183BF2CC1979400B29DBB /* nike.usdz */; };
 		E76FEAC72CC23C4400F9B234 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +63,6 @@
 		E70183B42CC13C7100B29DBB /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		E70183B92CC1566E00B29DBB /* Basket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		E70183BB2CC195A300B29DBB /* goose.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = goose.usdz; sourceTree = "<group>"; };
-		E70183BF2CC1979400B29DBB /* nike.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = nike.usdz; path = "../../../../../Library/Containers/com.apple.RealityConverter/Data/tmp/com.apple.RealityConverter/B9D7171A-40E6-45E0-ABD8-003730A78EB6/nike.usdz"; sourceTree = "<group>"; };
 		E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +120,6 @@
 				E70183AE2CC11BF000B29DBB /* dior.usdz */,
 				E70183AC2CC11BF000B29DBB /* fila.usdz */,
 				E70183AD2CC11BF000B29DBB /* gucci.usdz */,
-				E70183BF2CC1979400B29DBB /* nike.usdz */,
 				E701837F2CC10B5400B29DBB /* ContentView.swift */,
 				E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */,
 				E70183BB2CC195A300B29DBB /* goose.usdz */,
@@ -264,7 +261,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70183C02CC1979400B29DBB /* nike.usdz in Resources */,
 				E70183852CC10B5500B29DBB /* Preview Assets.xcassets in Resources */,
 				E70183A82CC1134300B29DBB /* newbalance.usdz in Resources */,
 				E70183822CC10B5500B29DBB /* Assets.xcassets in Resources */,
