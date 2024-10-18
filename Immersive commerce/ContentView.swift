@@ -199,6 +199,8 @@ class ARViewController: UIViewController {
     var arView: ARView!
     let assetNames = ["dior", "gucci", "fila", "goose"]
     var onModelTapped: ((String) -> Void)?
+    private var focusedEntity: ModelEntity?
+    private var originalPositions: [ModelEntity: SIMD3<Float>] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -217,9 +219,11 @@ class ARViewController: UIViewController {
 
     func loadModels() {
         let spacing: Float = 0.5
-        let rows = 3
-        let columns = 3
+        let modelScale: Float = 0.3
+        let initialYOffset: Float = -0.5 // Adjust this to lower the initial position of models
 
+        let totalWidth = Float(assetNames.count - 1) * spacing
+        
         for (index, assetName) in assetNames.enumerated() {
             let modelName = "\(assetName).usdz"
             guard let modelEntity = try? ModelEntity.loadModel(named: modelName) else {
@@ -227,22 +231,17 @@ class ARViewController: UIViewController {
                 continue
             }
 
-            modelEntity.name = modelName // Set the name for later identification
-            modelEntity.scale = SIMD3<Float>(0.5, 0.5, 0.5)
-
-            // Add collision component for hit detection
+            modelEntity.name = modelName
+            modelEntity.scale = SIMD3<Float>(repeating: modelScale)
             modelEntity.generateCollisionShapes(recursive: true)
 
-            let row = index / columns
-            let column = index % columns
-            let xPosition = Float(column) * spacing - (Float(columns) * spacing) / 2 + spacing / 2
-            let zPosition = Float(row) * spacing - (Float(rows) * spacing) / 2 + spacing / 2
+            let xPosition = Float(index) * spacing - totalWidth / 2
+            let position = SIMD3<Float>(xPosition, initialYOffset, -1.5)
 
-            let anchor = AnchorEntity(plane: .horizontal)
-            modelEntity.position = SIMD3<Float>(xPosition, 0, zPosition)
+            let anchor = AnchorEntity(world: position)
             anchor.addChild(modelEntity)
-
             arView.scene.addAnchor(anchor)
+            originalPositions[modelEntity] = modelEntity.position(relativeTo: nil)
         }
     }
 
@@ -251,32 +250,63 @@ class ARViewController: UIViewController {
 
         if let tappedEntity = arView.entity(at: location) as? ModelEntity {
             print("Tapped on model: \(tappedEntity.name)")
-            moveToCameraFocalPoint(entity: tappedEntity)
-            
-            // Extract the model name from the entity name (remove the .usdz extension)
-            let modelName = tappedEntity.name.replacingOccurrences(of: ".usdz", with: "")
-            
-            // Call the onModelTapped closure to show the ProductDetailView
-            onModelTapped?(modelName)
+
+            // Check if the tapped entity is already the focused entity
+            if tappedEntity != focusedEntity {
+                // Reset the previously focused entity
+                if let focusedEntity = focusedEntity {
+                    resetEntityPosition(entity: focusedEntity)
+                }
+
+                // Move the new entity to the camera focal point
+                moveToCameraFocalPoint(entity: tappedEntity)
+                focusedEntity = tappedEntity
+
+                let modelName = tappedEntity.name.replacingOccurrences(of: ".usdz", with: "")
+                onModelTapped?(modelName)
+            } else {
+                print("Model is already in focus")
+                // Optionally, you can update the product detail view here if needed
+                // without moving the model again
+                let modelName = tappedEntity.name.replacingOccurrences(of: ".usdz", with: "")
+                onModelTapped?(modelName)
+            }
         } else {
             print("No model entity was tapped.")
         }
     }
 
     func moveToCameraFocalPoint(entity: ModelEntity) {
-        // Get the current camera transform (position and rotation)
         let cameraTransform = arView.cameraTransform
-
-        // Calculate the new position 1 meter in front of the camera
-        let cameraForward = cameraTransform.matrix.columns.2
         let cameraPosition = cameraTransform.translation
-        let newPosition = cameraPosition - SIMD3<Float>(cameraForward.x, cameraForward.y, cameraForward.z) * 1.0
+        let cameraForward = normalize(SIMD3<Float>(cameraTransform.matrix.columns.2.x, cameraTransform.matrix.columns.2.y, cameraTransform.matrix.columns.2.z))
+        
+        // Use a fixed distance from the camera
+        let distanceInFrontOfCamera: Float = 1.0
+        
+        // Calculate position in front of the camera
+        let positionInFrontOfCamera = cameraPosition - (cameraForward * distanceInFrontOfCamera)
+        
+        // Adjust Y-position to be lower in the camera view
+        let yOffset: Float = -0.3 // Adjust this value as needed
+        let newPosition = SIMD3<Float>(
+            positionInFrontOfCamera.x,
+            cameraPosition.y + yOffset,
+            positionInFrontOfCamera.z
+        )
+        
+        // Calculate rotation to face the camera, but only around the Y-axis
+        let entityToCamera = normalize(cameraPosition - newPosition)
+        let rotationAngle = atan2(entityToCamera.x, entityToCamera.z)
+        let newRotation = simd_quatf(angle: rotationAngle, axis: SIMD3<Float>(0, 1, 0))
 
-        // Use the camera's rotation to align the entity to face the camera
-        let lookAtCameraRotation = cameraTransform.rotation
+        entity.move(to: Transform(scale: entity.transform.scale, rotation: newRotation, translation: newPosition), relativeTo: nil, duration: 0.5)
+    }
 
-        // Animate the entity's movement and rotation
-        entity.move(to: Transform(scale: entity.transform.scale, rotation: lookAtCameraRotation, translation: newPosition), relativeTo: nil, duration: 0.5)
+    func resetEntityPosition(entity: ModelEntity) {
+        if let originalPosition = originalPositions[entity] {
+            entity.move(to: Transform(translation: originalPosition), relativeTo: nil, duration: 0.5)
+        }
     }
 }
 
