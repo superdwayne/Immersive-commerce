@@ -6,8 +6,28 @@
 	<dict>
 		<key>Immersive commerce.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E70183792CC10B5400B29DBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E70183892CC10B5500B29DBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E70183932CC10B5500B29DBB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
