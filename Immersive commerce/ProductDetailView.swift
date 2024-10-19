@@ -17,9 +17,7 @@ struct ProductDetailView: View {
                     .font(.headline)
                     .padding(.bottom, 2)
                 
-                Text("Men's shoes")
-                    .font(.subheadline)
-                    .padding(.bottom, 20)
+
                 
                 Button(action: {
                     // Add to basket action

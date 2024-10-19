@@ -73,29 +73,27 @@ struct ContentView: View {
     }
 }
 
-struct ModelName: Identifiable {
-    let id = UUID()
-    let name: String
-}
+
 
 struct DashboardView: View {
     @StateObject private var viewModel = ModelViewModel()
     @Binding var selectedModelName: String?
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 30) {
+        ZStack {
+            // Background Color
+            Color.gray.opacity(0.1)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
                 headerView
                 
-                sectionTitle("Top VTO Picks")
+                Spacer()
                 
-                horizontalScrollView
+                mainCardView
                 
-                sectionTitle("Your Personal Curated Selection Awaits")
-                
-                arNavigationLink
-                
-            
+                Spacer()
+              
             }
             .padding()
         }
@@ -104,54 +102,43 @@ struct DashboardView: View {
     
     private var headerView: some View {
         HStack {
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 40, height: 40)
-                .foregroundColor(.green)
-            
-            VStack(alignment: .leading) {
-                Text("Hi, DPM!")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                Text("Good to see you again")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
+            Text("Today")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
             Spacer()
+            Text("Hot 🔥")
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(20)
+                .foregroundColor(.white)
         }
         .padding(.horizontal)
     }
     
-    private func sectionTitle(_ title: String) -> some View {
-        Text(title)
-            .font(.headline)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal)
-    }
-    
-    private var horizontalScrollView: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 15) {
-                ForEach(viewModel.models) { model in
-                    NavigationLink(destination: ProductDetailView(productName: model.name, productDescription: "Sustainable materials")) {
-                        Circle()
-                            .fill(Color.gray.opacity(0.2))
-                            .frame(width: 70, height: 70)
-                            .overlay(
-                                Image("shoe_thumbnail") // Ensure this image exists
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 60, height: 60)
-                            )
-                    }
-                }
-            }
-            .padding(.horizontal)
+    private var mainCardView: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Image("product_image") // Replace with your product image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 300)
+                .clipped()
+                .cornerRadius(20)
+            
+            
+            arNavigationLink
         }
+        .padding()
+        .background(Color.black.opacity(0.7))
+        .cornerRadius(20)
+        .shadow(radius: 10)
+        .padding(.horizontal)
     }
     
     private var arNavigationLink: some View {
-        NavigationLink(destination: ARViewContainer(selectedModelName: $selectedModelName).edgesIgnoringSafeArea(.all)
+        NavigationLink(destination: ARViewContainer(selectedModelName: $selectedModelName)
+            .edgesIgnoringSafeArea(.all)
             .onDisappear {
                 selectedModelName = nil // Reset when navigating back
             }
@@ -165,7 +152,6 @@ struct DashboardView: View {
         }
         .padding(.horizontal)
     }
-    
     
 }
 
@@ -218,7 +204,7 @@ class ARViewController: UIViewController {
     }
 
     func loadModels() {
-        let spacing: Float = 0.5
+        let spacing: Float = 0.7 // Adjust spacing to balance distance
         let modelScale: Float = 0.3
         let initialYOffset: Float = -0.5 // Adjust this to lower the initial position of models
 
@@ -282,7 +268,7 @@ class ARViewController: UIViewController {
         let cameraForward = normalize(SIMD3<Float>(cameraTransform.matrix.columns.2.x, cameraTransform.matrix.columns.2.y, cameraTransform.matrix.columns.2.z))
         
         // Use a fixed distance from the camera
-        let distanceInFrontOfCamera: Float = 1.0
+        let distanceInFrontOfCamera: Float = 1.5 // Increase this value to move the model further away
         
         // Calculate position in front of the camera
         let positionInFrontOfCamera = cameraPosition - (cameraForward * distanceInFrontOfCamera)
@@ -318,6 +304,3 @@ class ARViewController: UIViewController {
 #Preview {
     ContentView()
 }
-
-
-
