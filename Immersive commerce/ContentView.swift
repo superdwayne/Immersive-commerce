@@ -78,6 +78,7 @@ struct ContentView: View {
 struct DashboardView: View {
     @StateObject private var viewModel = ModelViewModel()
     @Binding var selectedModelName: String?
+    @State private var isARViewActive = false
 
     var body: some View {
         ZStack {
@@ -98,21 +99,23 @@ struct DashboardView: View {
             .padding()
         }
         .navigationBarHidden(true)
+        .background(
+            NavigationLink(
+                destination: ARViewWithOverlay(selectedModelName: $selectedModelName)
+                    .edgesIgnoringSafeArea(.all),
+                isActive: $isARViewActive,
+                label: { EmptyView() }
+            )
+        )
     }
     
     private var headerView: some View {
         HStack {
-            Text("Today")
+            Text("Today's personalised items")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
             Spacer()
-            Text("Hot 🔥")
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .background(Color.white.opacity(0.2))
-                .cornerRadius(20)
-                .foregroundColor(.white)
         }
         .padding(.horizontal)
     }
@@ -126,8 +129,17 @@ struct DashboardView: View {
                 .clipped()
                 .cornerRadius(20)
             
-            
-            arNavigationLink
+            Button(action: {
+                isARViewActive = true
+            }) {
+                Text("View your items in AR")
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(10)
+            }
+            .padding(.horizontal)
         }
         .padding()
         .background(Color.black.opacity(0.7))
@@ -136,37 +148,25 @@ struct DashboardView: View {
         .padding(.horizontal)
     }
     
-    private var arNavigationLink: some View {
-        NavigationLink(destination: ARViewContainer(selectedModelName: $selectedModelName)
-            .edgesIgnoringSafeArea(.all)
-            .onDisappear {
-                selectedModelName = nil // Reset when navigating back
-            }
-        ) {
-            Text("View your items in AR")
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.blue)
-                .cornerRadius(10)
-        }
-        .padding(.horizontal)
-    }
-    
 }
 
 struct ARViewContainer: UIViewControllerRepresentable {
     @Binding var selectedModelName: String?
+    var shouldLoadModels: Bool
 
     func makeUIViewController(context: Context) -> ARViewController {
         let viewController = ARViewController()
-        viewController.onModelTapped = { modelName in
-            selectedModelName = modelName
+        viewController.onModelTapped = { modelEntity in
+            selectedModelName = modelEntity.name
         }
         return viewController
     }
 
-    func updateUIViewController(_ uiViewController: ARViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: ARViewController, context: Context) {
+        if shouldLoadModels {
+            uiViewController.loadModels()
+        }
+    }
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -183,13 +183,18 @@ struct ARViewContainer: UIViewControllerRepresentable {
 
 class ARViewController: UIViewController {
     var arView: ARView!
-    let assetNames = ["dior", "gucci", "fila", "goose"]
-    var onModelTapped: ((String) -> Void)?
+    var onModelTapped: ((ModelEntity) -> Void)?
     private var focusedEntity: ModelEntity?
     private var originalPositions: [ModelEntity: SIMD3<Float>] = [:]
+    private let assetNames = ["dior", "gucci", "fila", "goose"]
+    private var modelsLoaded = false  // Add this line
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupARView()
+    }
+
+    private func setupARView() {
         arView = ARView(frame: view.bounds)
         view.addSubview(arView)
 
@@ -197,19 +202,19 @@ class ARViewController: UIViewController {
         config.planeDetection = [.horizontal]
         arView.session.run(config)
 
-        loadModels()
-
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         arView.addGestureRecognizer(tapGesture)
     }
 
     func loadModels() {
-        let spacing: Float = 0.7 // Adjust spacing to balance distance
-        let modelScale: Float = 0.3
-        let initialYOffset: Float = -0.5 // Adjust this to lower the initial position of models
+        guard !modelsLoaded else { return }  // Add this line
 
-        let totalWidth = Float(assetNames.count - 1) * spacing
-        
+        let radius: Float = 0.5
+        let modelScale: Float = 0.5
+        let initialYOffset: Float = -0.5
+        let centerZOffset: Float = -2.0
+        let angleIncrement = (2 * .pi) / Float(assetNames.count)
+
         for (index, assetName) in assetNames.enumerated() {
             let modelName = "\(assetName).usdz"
             guard let modelEntity = try? ModelEntity.loadModel(named: modelName) else {
@@ -221,44 +226,36 @@ class ARViewController: UIViewController {
             modelEntity.scale = SIMD3<Float>(repeating: modelScale)
             modelEntity.generateCollisionShapes(recursive: true)
 
-            let xPosition = Float(index) * spacing - totalWidth / 2
-            let position = SIMD3<Float>(xPosition, initialYOffset, -1.5)
+            let angle = angleIncrement * Float(index)
+            let xPosition = radius * cos(angle)
+            let zPosition = centerZOffset + radius * sin(angle)
+            let position = SIMD3<Float>(xPosition, initialYOffset, zPosition)
 
             let anchor = AnchorEntity(world: position)
             anchor.addChild(modelEntity)
             arView.scene.addAnchor(anchor)
             originalPositions[modelEntity] = modelEntity.position(relativeTo: nil)
         }
+        modelsLoaded = true  // Add this line
+        print("Models loaded")
     }
 
     @objc func handleTap(gesture: UITapGestureRecognizer) {
         let location = gesture.location(in: arView)
 
         if let tappedEntity = arView.entity(at: location) as? ModelEntity {
-            print("Tapped on model: \(tappedEntity.name)")
+            if let currentFocusedEntity = focusedEntity, currentFocusedEntity != tappedEntity {
+                resetEntityPosition(entity: currentFocusedEntity)
+            }
 
-            // Check if the tapped entity is already the focused entity
-            if tappedEntity != focusedEntity {
-                // Reset the previously focused entity
-                if let focusedEntity = focusedEntity {
-                    resetEntityPosition(entity: focusedEntity)
-                }
-
-                // Move the new entity to the camera focal point
+            if tappedEntity == focusedEntity {
+                resetEntityPosition(entity: tappedEntity)
+                focusedEntity = nil
+            } else {
                 moveToCameraFocalPoint(entity: tappedEntity)
                 focusedEntity = tappedEntity
-
-                let modelName = tappedEntity.name.replacingOccurrences(of: ".usdz", with: "")
-                onModelTapped?(modelName)
-            } else {
-                print("Model is already in focus")
-                // Optionally, you can update the product detail view here if needed
-                // without moving the model again
-                let modelName = tappedEntity.name.replacingOccurrences(of: ".usdz", with: "")
-                onModelTapped?(modelName)
             }
-        } else {
-            print("No model entity was tapped.")
+            onModelTapped?(tappedEntity)
         }
     }
 
@@ -267,21 +264,16 @@ class ARViewController: UIViewController {
         let cameraPosition = cameraTransform.translation
         let cameraForward = normalize(SIMD3<Float>(cameraTransform.matrix.columns.2.x, cameraTransform.matrix.columns.2.y, cameraTransform.matrix.columns.2.z))
         
-        // Use a fixed distance from the camera
-        let distanceInFrontOfCamera: Float = 1.5 // Increase this value to move the model further away
-        
-        // Calculate position in front of the camera
+        let distanceInFrontOfCamera: Float = 0.5
         let positionInFrontOfCamera = cameraPosition - (cameraForward * distanceInFrontOfCamera)
         
-        // Adjust Y-position to be lower in the camera view
-        let yOffset: Float = -0.3 // Adjust this value as needed
+        let yOffset: Float = -0.3
         let newPosition = SIMD3<Float>(
             positionInFrontOfCamera.x,
             cameraPosition.y + yOffset,
             positionInFrontOfCamera.z
         )
         
-        // Calculate rotation to face the camera, but only around the Y-axis
         let entityToCamera = normalize(cameraPosition - newPosition)
         let rotationAngle = atan2(entityToCamera.x, entityToCamera.z)
         let newRotation = simd_quatf(angle: rotationAngle, axis: SIMD3<Float>(0, 1, 0))
@@ -291,7 +283,60 @@ class ARViewController: UIViewController {
 
     func resetEntityPosition(entity: ModelEntity) {
         if let originalPosition = originalPositions[entity] {
-            entity.move(to: Transform(translation: originalPosition), relativeTo: nil, duration: 0.5)
+            entity.move(to: Transform(scale: entity.transform.scale, translation: originalPosition), relativeTo: nil, duration: 0.5)
+        }
+    }
+}
+
+struct ARViewWithOverlay: View {
+    @Binding var selectedModelName: String?
+    @State private var showOverlay = true
+    @State private var shouldLoadModels = false
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        ZStack {
+            ARViewContainer(selectedModelName: $selectedModelName, shouldLoadModels: shouldLoadModels)
+                .edgesIgnoringSafeArea(.all)
+
+            if showOverlay {
+                Color.black.opacity(0.7)
+                    .edgesIgnoringSafeArea(.all)
+                    .overlay(
+                        VStack {
+                            Text("Your personalised items - just for you. Tap each item and explore their details")
+                                .font(.title)
+                                .foregroundColor(.white)
+
+                            Text("Tap to begin")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding()
+                        }
+                    )
+                    .onTapGesture {
+                        showOverlay = false
+                        shouldLoadModels = true
+                    }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
+        .onAppear {
+            // Reset selectedModelName as soon as this view appears
+            selectedModelName = nil
+        }
+    }
+
+    private var backButton: some View {
+        Button(action: {
+            selectedModelName = nil
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                Text("Back")
+            }
         }
     }
 }
@@ -304,3 +349,6 @@ class ARViewController: UIViewController {
 #Preview {
     ContentView()
 }
+
+
+

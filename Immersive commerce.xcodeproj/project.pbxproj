@@ -16,14 +16,14 @@
 		E701839B2CC10B5500B29DBB /* Immersive_commerceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E701839A2CC10B5500B29DBB /* Immersive_commerceUITestsLaunchTests.swift */; };
 		E70183A82CC1134300B29DBB /* newbalance.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183A72CC1134300B29DBB /* newbalance.usdz */; };
 		E70183AA2CC114AA00B29DBB /* used_new.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183A92CC114AA00B29DBB /* used_new.usdz */; };
-		E70183B02CC11BF000B29DBB /* fila.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183AC2CC11BF000B29DBB /* fila.usdz */; };
 		E70183B12CC11BF000B29DBB /* gucci.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183AD2CC11BF000B29DBB /* gucci.usdz */; };
-		E70183B22CC11BF000B29DBB /* dior.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183AE2CC11BF000B29DBB /* dior.usdz */; };
 		E70183B52CC13C7100B29DBB /* home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183B32CC13C7100B29DBB /* home.swift */; };
 		E70183B62CC13C7100B29DBB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183B42CC13C7100B29DBB /* SplashScreen.swift */; };
 		E70183BA2CC1566E00B29DBB /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70183B92CC1566E00B29DBB /* Basket.swift */; };
-		E70183BD2CC195A300B29DBB /* goose.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E70183BB2CC195A300B29DBB /* goose.usdz */; };
 		E76FEAC72CC23C4400F9B234 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */; };
+		E77805652CC444FA004B9ED2 /* fila.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E77805642CC444FA004B9ED2 /* fila.usdz */; };
+		E77805672CC445C6004B9ED2 /* dior.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E77805662CC445C6004B9ED2 /* dior.usdz */; };
+		E778056B2CC446F8004B9ED2 /* goose.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E778056A2CC446F8004B9ED2 /* goose.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +56,14 @@
 		E701839A2CC10B5500B29DBB /* Immersive_commerceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Immersive_commerceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E70183A72CC1134300B29DBB /* newbalance.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = newbalance.usdz; sourceTree = "<group>"; };
 		E70183A92CC114AA00B29DBB /* used_new.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = used_new.usdz; sourceTree = "<group>"; };
-		E70183AC2CC11BF000B29DBB /* fila.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fila.usdz; sourceTree = "<group>"; };
 		E70183AD2CC11BF000B29DBB /* gucci.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = gucci.usdz; sourceTree = "<group>"; };
-		E70183AE2CC11BF000B29DBB /* dior.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dior.usdz; sourceTree = "<group>"; };
 		E70183B32CC13C7100B29DBB /* home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = home.swift; sourceTree = "<group>"; };
 		E70183B42CC13C7100B29DBB /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		E70183B92CC1566E00B29DBB /* Basket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
-		E70183BB2CC195A300B29DBB /* goose.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = goose.usdz; sourceTree = "<group>"; };
 		E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		E77805642CC444FA004B9ED2 /* fila.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = fila.usdz; path = ../../../fila.usdz; sourceTree = "<group>"; };
+		E77805662CC445C6004B9ED2 /* dior.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = dior.usdz; path = ../../../dior.usdz; sourceTree = "<group>"; };
+		E778056A2CC446F8004B9ED2 /* goose.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = goose.usdz; path = "../../../Immersive Commerce/public/modles/goose.usdz"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +117,12 @@
 				E70183A72CC1134300B29DBB /* newbalance.usdz */,
 				E70183A92CC114AA00B29DBB /* used_new.usdz */,
 				E701837D2CC10B5400B29DBB /* AppDelegate.swift */,
-				E70183AE2CC11BF000B29DBB /* dior.usdz */,
-				E70183AC2CC11BF000B29DBB /* fila.usdz */,
+				E77805642CC444FA004B9ED2 /* fila.usdz */,
+				E77805662CC445C6004B9ED2 /* dior.usdz */,
 				E70183AD2CC11BF000B29DBB /* gucci.usdz */,
+				E778056A2CC446F8004B9ED2 /* goose.usdz */,
 				E701837F2CC10B5400B29DBB /* ContentView.swift */,
 				E76FEAC62CC23C4400F9B234 /* ProductDetailView.swift */,
-				E70183BB2CC195A300B29DBB /* goose.usdz */,
 				E70183B92CC1566E00B29DBB /* Basket.swift */,
 				E70183B32CC13C7100B29DBB /* home.swift */,
 				E70183B42CC13C7100B29DBB /* SplashScreen.swift */,
@@ -262,11 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70183852CC10B5500B29DBB /* Preview Assets.xcassets in Resources */,
+				E77805652CC444FA004B9ED2 /* fila.usdz in Resources */,
 				E70183A82CC1134300B29DBB /* newbalance.usdz in Resources */,
+				E778056B2CC446F8004B9ED2 /* goose.usdz in Resources */,
+				E77805672CC445C6004B9ED2 /* dior.usdz in Resources */,
 				E70183822CC10B5500B29DBB /* Assets.xcassets in Resources */,
-				E70183BD2CC195A300B29DBB /* goose.usdz in Resources */,
-				E70183B22CC11BF000B29DBB /* dior.usdz in Resources */,
-				E70183B02CC11BF000B29DBB /* fila.usdz in Resources */,
 				E70183B12CC11BF000B29DBB /* gucci.usdz in Resources */,
 				E70183AA2CC114AA00B29DBB /* used_new.usdz in Resources */,
 			);
@@ -480,7 +480,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "Creative-Technology-Collective.Immersive-commerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -516,7 +516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "Creative-Technology-Collective.Immersive-commerce";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
