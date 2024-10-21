@@ -1,6 +1,6 @@
 # Immersive Commerce
 
-Immersive Commerce is an iOS application designed to allow users to visualize products in their own space using AR. This project includes features like 3D model integration and an AR viewer, leveraging technologies such as Swift, 8th Wall, and APIs serving GLB and USDZ models.
+Immersive Commerce is an iOS application designed to allow users to visualize products in their own space using AR. This project includes features like 3D model integration and an AR viewer, leveraging technologies such as Swift, and APIs serving GLB and USDZ models.
 
 ## Features
 
